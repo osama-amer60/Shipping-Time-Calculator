@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    
+    <div class="container" >
+    <h1>The Company</h1>
+    <h2>Shipping Time <br/> Calculator</h2>
+    
+
+    <form action="" >
+      <div class="container">
+        <div class="row ">
+
+          <div class="col col-12 col-md-4 ">
+            <div class="input-icons">
+              <input id="datepicker" class="input-field options"   type="date"  placeholder="Order Date">
+              <span class="warningMsg  d-none" id="dateWarningMsg">*the date is old</span>
+              <!-- <i class="fa-sharp fa-solid fa-calendar calender-icon"></i>  -->
+            </div>
+          </div>
+
+          <div class="col col-12 col-md-4">
+            <div class="input-icons">
+              <i class="fa-sharp fa-solid fa-arrow-down"></i>
+                <select class="input-field options" id="productstyle" >
+                    <option value="null" >Fabric Type</option>
+                    <option value="Cotton">Cotton</option>
+                    <option value="Linen">Linen</option>
+                </select>
+                <span  class="warningMsg d-none"  id="typeWarningMsg">*choose Cotton or Linen</span>
+
+            </div>
+          </div>
+
+          <div class="col col-12 col-md-4 ">
+            <div class="input-icons">
+              <input id="productnumber" class="input-field"    type="number"  placeholder="Quantity">
+              <i id="quantityAlert" class="fa-sharp fa-solid fa-circle-exclamation"></i>
+              <div id="quantityAlertMsg">Shipping Dates May Vary Based on Quantity</div>
+              <span  class="warningMsg  d-none"  id="QuantityWarningMsg"> *the rang between 1 - 100</span>
+            </div>
+          </div>            
+
+        </div>
+      </div>
+    </form>
+
+    <button id="calculate">Calculate</button>
+
+    <h3 id="order"><span>Please enter your order information to estimate shipping date</span></h3>
+    </div>
+
+    <div class="popUp d-none">
+        <div class="popUpMsg">
+            Please Fill All Information Correctly !!!
+
+            <button id="colse" type="button" class="btn btn-light">colse</button>
+
+        </div>
+    </div>
+    
+    <script src="js/main.js"></script>
+  </body>
+</html>

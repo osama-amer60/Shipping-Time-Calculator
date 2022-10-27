@@ -1,0 +1,106 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-image: linear-gradient(to left , #2414DB ,#AC6EFF  ,#FFF 15% );
+}
+h1{
+    padding-top: 43px;
+    font-weight: bold;
+    color: #2B2E39;
+}
+h2{
+    font-weight:bolder;
+    padding-top: 85px;
+    color: #2B2E39;
+    font-size: 85PX;
+}
+form{
+    margin: 27px 0;
+}
+form .row{
+    width: 70%;
+}
+#quantityAlertMsg{
+    position: absolute;
+    top: -55px;
+    left: 131px;
+    width: 190px;
+    display: none;
+    color: rgb(253, 77, 77);
+    font-weight: 700;
+}
+.input-icons {
+     margin: 5px;
+    display: inline-block;
+    position: relative;  
+    width: 100%;
+    color: #8D9092;
+}
+.input-icons i {
+    position: absolute;
+    top: 12px;
+    right: 10%;
+}
+.input-field {
+    width: 100%;
+    padding: 7px;
+    text-align: left;
+    border:2px solid #8D9092;
+    border-radius:50px;
+    color: #8D9092;
+}
+.options{
+    appearance: none;    
+}
+button{
+    border: none;
+    border-radius: 50px;
+    margin: 25px ;
+    padding:10px 55px;
+    background-color: #7A4BED;
+    color: #FFF;
+    font-weight: bold;
+}
+h3{
+    font-weight: bolder;
+    font-size: 29px;
+}
+h3 span{
+    font-weight: 100;
+    color:#2B2E39 ;
+    font-size: 27px;
+}
+.popUp{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(0,0,0,0.3);
+    justify-content: center;
+    align-items: center;
+}
+.popUpMsg{
+    padding: 20px;
+    width: 50%;
+    height: 150px;
+    margin: 80px auto;
+    background-color: #AC6EFF;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    position: relative;
+    color: #FFF;
+    font-size: 25px;
+    border-radius: 20px;
+    position: relative;
+}
+#colse{
+    position: absolute;
+    bottom: -17px;
+    right: -11px;
+}
+.warningMsg{
+    color: red;
+}
