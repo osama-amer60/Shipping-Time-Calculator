@@ -55,26 +55,22 @@ calculate.addEventListener("click", ()=>{
         showWarningMsg("QuantityWarningMsg")
     }
     else{
-        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+        if (productstyle.value =="Cotton" && productnumber.value < 50) {
+            var showResult = showFinalDate(datepicker.value,2)
+        }
+        else if(productstyle.value =="Cotton" && productnumber.value >= 50){
+            var showResult = showFinalDate(datepicker.value,3)
+        }
+        else if(productstyle.value =="Linen" && productnumber.value < 50){
+            var showResult = showFinalDate(datepicker.value,4)
+        }
+        else if(productstyle.value =="Linen" && productnumber.value >= 50){
 
-        let userDay = new Date(datepicker.value).getDay()
-        let dayChoosed = days[userDay]
-
-        console.log(dayChoosed)
-
-
-        let result = addDays(datepicker.value,2)
-
-        let day = result.getDate()
-        let monthDisplay = month[result.getMonth()];
-        let year = result.getFullYear()
-
+            var showResult = showFinalDate(datepicker.value,5)
+        }
         const order = document.querySelector("#order")
-        order.innerHTML = `<span> Your Estimated Shipping Date is  </span/> ${day} ${monthDisplay} ${year}`
-        console.log(datepicker.value)
-        console.log(productstyle.value)
-        console.log(productnumber.value)
+        order.innerHTML = `<span> Your Estimated Shipping Date is  </span/> ${showResult}`
+
     }
 })
 
@@ -108,3 +104,26 @@ function addDays(date, days) {
 
 
 
+//display final date   
+function showFinalDate(date, NumDays){
+const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const holidays = date.slice(5) 
+ //get the name of the day
+ let userDay = new Date(date).getDay()
+ let dayChoosed = days[userDay]
+ let fullDate;
+ if (dayChoosed == "Friday") {
+     fullDate = addDays(date,NumDays + 2)
+ }else if(dayChoosed == "Saturday" ||holidays == "07-04" ||holidays =="12-25"){
+     fullDate = addDays(date,NumDays + 1)
+ }
+ else{
+     fullDate = addDays(date,NumDays)
+ }
+  const day = fullDate.getDate()
+  const monthDisplay = month[fullDate.getMonth()];
+  const year = fullDate.getFullYear()
+  const showResult = day + " "+ monthDisplay+ " " + year
+  return showResult
+}  
