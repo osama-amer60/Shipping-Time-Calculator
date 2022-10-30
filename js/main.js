@@ -55,18 +55,19 @@ calculate.addEventListener("click", ()=>{
         showWarningMsg("QuantityWarningMsg")
     }
     else{
+        let showResult;
         if (productstyle.value =="Cotton" && productnumber.value < 50) {
-            var showResult = showFinalDate(datepicker.value,2)
+             showResult = showFinalDate(datepicker.value,2)
         }
         else if(productstyle.value =="Cotton" && productnumber.value >= 50){
-            var showResult = showFinalDate(datepicker.value,3)
+             showResult = showFinalDate(datepicker.value,3)
         }
         else if(productstyle.value =="Linen" && productnumber.value < 50){
-            var showResult = showFinalDate(datepicker.value,4)
+             showResult = showFinalDate(datepicker.value,4)
         }
         else if(productstyle.value =="Linen" && productnumber.value >= 50){
 
-            var showResult = showFinalDate(datepicker.value,5)
+             showResult = showFinalDate(datepicker.value,5)
         }
         const order = document.querySelector("#order")
         order.innerHTML = `<span> Your Estimated Shipping Date is  </span/> ${showResult}`
@@ -100,9 +101,6 @@ function addDays(date, days) {
     result.setDate(result.getDate() + days);
     return result;
   }
-
-
-
 
 //display final date   
 function showFinalDate(date, NumDays){
